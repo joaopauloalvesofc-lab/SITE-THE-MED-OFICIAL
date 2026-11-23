@@ -10,11 +10,15 @@
 .medfast-eyebrow{font-size:10px;letter-spacing:.13em;color:#d7c1ce}
 .medfast-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);align-items:center}
 .medfast-copy h2{text-wrap:balance;font-family:inherit;font-size:clamp(34px,3.2vw,48px);font-weight:400;line-height:1.08;letter-spacing:-.06em;margin:0;color:#fff}
-.medfast-copy h2 em{font-weight:380;color:#e5bdcf}
+.medfast-copy h2 em{display:block;text-wrap:balance;font-weight:380;color:#e5bdcf}
+.medfast-copy h2 br{display:none}
+.medfast-kicker{margin:20px 0 0;max-width:40ch;font-size:17px;line-height:1.45;font-weight:500;letter-spacing:-.015em;color:#f3dde7;text-wrap:balance}
+.medfast-kicker+.medfast-description{margin-top:10px}
 .medfast-description{font-size:16px;line-height:1.6;color:#e2d2db;max-width:48ch;margin:18px 0 0}
 .medfast-features{display:grid;gap:15px;list-style:none;margin:24px 0;padding:0}
 .medfast-features li{display:flex;gap:13px;align-items:flex-start}
 .medfast-icon{display:grid;place-items:center;flex-shrink:0;width:30px;height:30px;border:1px solid #d4b4c64d;border-radius:8px;color:#edc4d7;font-size:23px;line-height:1}
+.medfast-features li:nth-child(3) .medfast-icon{font-size:17px}
 .medfast-features strong{display:block;font-weight:500;font-size:15px;line-height:1.4}
 .medfast-features div>span{display:block;margin-top:3px;color:#cbb6c2;font-size:13px;line-height:1.5}
 .medfast-fold .medfast-cta{display:inline-flex;align-items:center;gap:28px;border-radius:50px;padding:14px 22px;min-height:48px;background:#fff;color:#211e20;font-size:14px;font-weight:600;transition:background .2s}
@@ -71,7 +75,7 @@
 @media(max-width:700px){.medfast-fold{padding:24px 20px 18px;margin-top:48px}.medfast-head{margin-bottom:25px}.medfast-brand{font-size:29px}.medfast-eyebrow{max-width:110px;text-align:right;font-size:9px}.medfast-layout{grid-template-columns:1fr;gap:26px}.medfast-copy h2{font-size:clamp(31px,7.5vw,42px)}.medfast-description{font-size:15px;margin-top:15px}.medfast-features{gap:12px;margin:19px 0}.medfast-features strong{font-size:14px}.medfast-features div>span{font-size:12px}.medfast-demo-head{padding:18px}.medfast-demo{height:600px}.medfast-bubble,.medfast-reply p{font-size:14px}.medfast-choices{gap:6px}.medfast-choices button{font-size:11px;padding:9px}.medfast-demo-foot{padding:11px 16px;font-size:10px}.medfast-bottom{align-items:flex-start;font-size:10px;gap:20px;margin-top:23px;padding-top:15px}.medfast-bottom>*{max-width:50%}.medfast-bottom a{text-align:right}}
 @media(prefers-reduced-motion:reduce){.medfast-cta,.medfast-send,.medfast-chip{transition:none!important}.medfast-enter,.medfast-shine,.medfast-caret,.medfast-empty{animation:none!important}.medfast-demo{height:auto}.medfast-log{flex:none;-webkit-mask-image:none;mask-image:none}}
 /* On small screens the live example explains the uses, avoiding repeated copy. */
-@media(max-width:700px){.medfast-features{display:none}.medfast-copy .medfast-cta{margin-top:18px}.medfast-demo{height:590px}.medfast-log{padding:4px 15px 6px}.medfast-compose{padding:6px 10px 10px}.medfast-draft{font-size:14px}.medfast-demo{margin-inline:-14px}.medfast-choices{gap:6px}.medfast-choices button{font-size:12px;padding:7px 13px}.medfast-bar{padding:10px 11px}.medfast-compose{padding:6px 8px 10px}.medfast-chip{padding:0 9px;font-size:12px}.medfast-layout{gap:22px}.medfast-description{line-height:1.5}.medfast-demo-head{padding:16px}.medfast-choices{padding:12px 15px 0}}
+@media(max-width:700px){.medfast-features{gap:14px;margin:22px 0 4px}.medfast-features .medfast-wa-feature{display:none}.medfast-features .medfast-icon{width:28px;height:28px;font-size:20px}.medfast-features div>span{font-size:13px}.medfast-copy .medfast-cta{margin-top:18px}.medfast-demo{height:590px}.medfast-log{padding:4px 15px 6px}.medfast-compose{padding:6px 10px 10px}.medfast-draft{font-size:14px}.medfast-demo{margin-inline:-14px}.medfast-choices{gap:6px}.medfast-choices button{font-size:12px;padding:7px 13px}.medfast-bar{padding:10px 11px}.medfast-compose{padding:6px 8px 10px}.medfast-chip{padding:0 9px;font-size:12px}.medfast-layout{gap:22px}.medfast-description{line-height:1.5}.medfast-demo-head{padding:16px}.medfast-choices{padding:12px 15px 0}}
 @media(max-width:400px){.medfast-actions{gap:4px}.medfast-end{gap:4px}.medfast-chip{padding-inline:7px}}
 /* The bar always on one line: with little room the mic steps out, and on the narrowest phones the buttons tighten. */
 @container (max-width:292px){.medfast-mic{display:none}}
