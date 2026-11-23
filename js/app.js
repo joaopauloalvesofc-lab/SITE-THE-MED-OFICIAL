@@ -37,7 +37,7 @@ const journeyRoot=$('[data-journey-guide]');
 if(journeyRoot)import('./journey-guide-controller.js').then(({createJourneyGuide})=>{if(!pageGone)journeyGuide=createJourneyGuide(journeyRoot,{onLayout:()=>updateScroll()});}).catch(()=>{/* All three paths remain readable without enhancement. */});
 let experienceController;
 const experienceRoot=$('[data-experience-section]');
-if(experienceRoot)import('./medical-experiences-controller.js').then(({createMedicalExperiences})=>{if(pageGone)return;experienceController=createMedicalExperiences(experienceRoot,{scrollTo,nativeTouch,scrollImmediate:target=>nativeTouch?setNativeScrollImmediate(window,target):setSmoothScrollImmediate(scroll,target),getScrollY:()=>currentScrollY(),onLayout:()=>updateScroll()});}).catch(()=>{experienceRoot.dataset.state='static';});
+if(experienceRoot)import('./experience-gallery.js').then(({createMedicalExperiences})=>{if(pageGone)return;experienceController=createMedicalExperiences(experienceRoot,{scrollTo,nativeTouch,scrollImmediate:target=>nativeTouch?setNativeScrollImmediate(window,target):setSmoothScrollImmediate(scroll,target),getScrollY:()=>currentScrollY(),onLayout:()=>updateScroll()});}).catch(()=>{experienceRoot.dataset.state='static';});
 let scienceController;
 const scienceRoot=$('[data-science-globe]');
 if(scienceRoot)import('./science-globe.js').then(({initScienceGlobe})=>initScienceGlobe(scienceRoot)).then(controller=>{if(pageGone)controller?.dispose();else scienceController=controller;}).catch(()=>{scienceRoot.dataset.globeState='fallback';});
