@@ -9,7 +9,7 @@
 .medfast-brand span{font-weight:380;font-style:italic;letter-spacing:-.085em}
 .medfast-eyebrow{font-size:10px;letter-spacing:.13em;color:#d7c1ce}
 .medfast-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px);align-items:center}
-.medfast-copy h2{font-family:inherit;font-size:clamp(34px,3.2vw,48px);font-weight:400;line-height:1.08;letter-spacing:-.06em;margin:0;color:#fff}
+.medfast-copy h2{text-wrap:balance;font-family:inherit;font-size:clamp(34px,3.2vw,48px);font-weight:400;line-height:1.08;letter-spacing:-.06em;margin:0;color:#fff}
 .medfast-copy h2 em{font-weight:380;color:#e5bdcf}
 .medfast-description{font-size:16px;line-height:1.6;color:#e2d2db;max-width:48ch;margin:18px 0 0}
 .medfast-features{display:grid;gap:15px;list-style:none;margin:24px 0;padding:0}
@@ -19,30 +19,63 @@
 .medfast-features div>span{display:block;margin-top:3px;color:#cbb6c2;font-size:13px;line-height:1.5}
 .medfast-fold .medfast-cta{display:inline-flex;align-items:center;gap:28px;border-radius:50px;padding:14px 22px;min-height:48px;background:#fff;color:#211e20;font-size:14px;font-weight:600;transition:background .2s}
 .medfast-cta:hover{background:#ecdde5!important}.medfast-cta>span{font-size:20px}
-.medfast-demo{min-width:0;overflow:hidden;color:#30232b;background:#faf8f9;border:1px solid #ffffff80;border-radius:16px;box-shadow:0 24px 65px #0004}
-.medfast-demo-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:23px 25px 20px;border-bottom:1px solid #e9e1e5}
+.medfast-demo{container-type:inline-size;display:flex;flex-direction:column;height:620px;min-width:0;overflow:hidden;color:#211e20;background:#fff;border:1px solid #ffffff80;border-radius:16px;box-shadow:0 24px 65px #0004;font-family:Inter,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif}
+.medfast-demo-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 22px 17px;border-bottom:1px solid #efeeef}
 .medfast-demo-head .medfast-brand{font-size:26px;color:#58233a}
 .medfast-demo-head>span:last-child{font-size:9px;letter-spacing:.1em;color:#796d74}
-.medfast-choices{display:flex;gap:7px;padding:20px 25px 0}
-.medfast-choices button{font-family:inherit;cursor:pointer;font-size:12px;line-height:1.35;border:1px solid #ded4d9;border-radius:7px;padding:9px 11px;color:#67525e;background:transparent}
-.medfast-choices button[aria-pressed=true]{background:#58233a;border-color:#58233a;color:white}
-.medfast-conversation{padding:21px 25px;min-height:296px}
-.medfast-question{margin-left:36px;padding:14px 17px;background:#efe7eb;border-radius:12px 12px 3px 12px}
-.medfast-question>span{font-size:9px;letter-spacing:.12em;color:#806775}
-.medfast-question p,.medfast-answer p{font-size:15px;line-height:1.55;margin:6px 0 0;letter-spacing:-.015em}
-.medfast-answer{padding-top:20px}
-.medfast-answer-label{display:flex;align-items:center;gap:7px;font-size:9px;letter-spacing:.1em;font-weight:600;color:#58233a}
-.medfast-answer-label>span{font-size:21px}
-.medfast-insight{border-left:2px solid #a77a8e;padding:2px 0 2px 12px;margin-top:17px}
-.medfast-insight>span{font-size:9px;letter-spacing:.08em;color:#845a6d}
-.medfast-insight p{font-size:12px;line-height:1.5;color:#78616d;margin-top:4px}
-.medfast-demo-foot{display:flex;align-items:center;gap:8px;border-top:1px solid #e9e1e5;padding:14px 25px;color:#826b77;font-size:11px;line-height:1.5}
-.medfast-demo-foot>span{font-size:20px}
+.medfast-choices{display:flex;flex-wrap:wrap;gap:7px;padding:14px 22px 0}
+.medfast-choices button{font-family:inherit;cursor:pointer;font-size:12px;line-height:1.35;border:1px solid #e3e1e2;border-radius:999px;padding:7px 12px;color:#676368;background:#fff}
+.medfast-choices button[aria-pressed=true]{background:#58233a;border-color:#58233a;color:#fff}
+/* The conversation: the bubble, the mark and the reply of the real chat (style.css of the Medfast). */
+.medfast-log{position:relative;flex:1;min-height:0;overflow:hidden;padding:4px 22px 6px;scroll-behavior:smooth;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 30px,#000 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 30px,#000 100%)}
+.medfast-turn{margin:12px 0 24px}
+.medfast-bubble{padding:12px 16px;border-radius:18px 18px 4px 18px;background:#f4f4f4;width:fit-content;max-width:88%;margin:0 0 0 auto!important;white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;line-height:1.5;color:#211e20}
+.medfast-reply{margin-top:16px;display:flex;align-items:flex-start;flex-direction:column;gap:8px}
+.medfast-reply p{margin:0;font-size:15px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere;color:#211e20}
+.medfast-mark{width:26px;height:24px;flex-shrink:0;color:#58233a}
+.medfast-thinking{display:flex;gap:12px;align-items:center;margin-top:20px;font-size:14px}
+.medfast-shine{background:linear-gradient(110deg,#515052 0%,#515052 40%,#a69a9c 50%,#515052 60%,#515052 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:medfast-shine 2s linear infinite}
+@keyframes medfast-shine{from{background-position:100% 0}to{background-position:-100% 0}}
+.medfast-empty{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:0 28px;text-align:center;animation:medfast-in .5s ease both}
+.medfast-empty .medfast-mark{width:38px;height:32px}
+.medfast-empty p{margin:0;text-wrap:balance;font-size:clamp(22px,2vw,27px);line-height:1.1;letter-spacing:-.065em;font-weight:490;color:#211e20}
+.medfast-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.medfast-enter{animation:medfast-in .38s cubic-bezier(.2,.7,.2,1) both}
+@keyframes medfast-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* The prompt bar of the real chat (MetalPromptBar): the draft, the clip, Prática/Estudo/Auto, the mic and the send ring. */
+.medfast-compose{padding:8px 18px 12px;container-type:inline-size}
+.medfast-bar{border-radius:22px;padding:12px;background:#fff;border:1px solid #dfdddf;box-shadow:0 1px 2px #0000000a,0 12px 32px -12px #0000001f}
+.medfast-draft{min-height:24px;max-height:72px;padding:2px 4px;font-size:15px;line-height:24px;color:#211e20;overflow:hidden;overflow-wrap:anywhere}
+.medfast-placeholder{color:#8f8a8d}
+.medfast-caret{display:inline-block;width:1.5px;height:17px;margin-left:1px;vertical-align:-3px;background:#211e20;animation:medfast-blink 1s steps(1) infinite}
+@keyframes medfast-blink{50%{opacity:0}}
+.medfast-actions{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:8px}
+.medfast-actions small{margin-left:auto;color:#807c7f;font-size:11px;white-space:nowrap}
+.medfast-round,.medfast-chip{display:inline-flex;justify-content:center;align-items:center;background:#fff;border:1px solid #e3e1e2;color:#211e20;border-radius:999px;flex-shrink:0}
+.medfast-round{width:32px;height:32px}
+.medfast-modes{display:inline-flex;gap:inherit}
+.medfast-short{display:none}
+.medfast-end{display:inline-flex;gap:6px;align-items:center;margin-left:auto}
+.medfast-chip{font-size:12px;padding:0 11px;height:31px;transition:background .25s,color .25s,border-color .25s}
+.medfast-chip.is-on{background:#58233a;border-color:#58233a;color:#fff}
+.medfast-ring{display:inline-flex;border-radius:50%;background:conic-gradient(#eee,#b7254c44,#aaa,#fff,#5b343b77,#eee);padding:1px;flex-shrink:0}
+.medfast-send{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:linear-gradient(160deg,#fff,#efedee);color:#211e20;transition:transform .18s ease}
+.medfast-send.is-sent{transform:scale(.84)}
+.medfast-privacy{display:block;text-wrap:balance;font-size:11px;text-align:center;margin-top:9px;color:#716d70}
+.medfast-wa-dot{width:7px;height:7px;flex-shrink:0;border-radius:50%;background:#25d366;box-shadow:0 0 0 3px #25d36626}
+.medfast-demo-foot{text-wrap:balance;display:flex;align-items:center;gap:8px;border-top:1px solid #efeeef;padding:12px 22px;color:#676368;font-size:11px;line-height:1.5}
 .medfast-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid #ffffff24;margin-top:28px;padding-top:18px;font-size:11px;color:#d2beca;line-height:1.5}
 .medfast-bottom p{margin:0;font-size:inherit}.medfast-bottom p>span:first-child{margin-right:6px;color:#c8b2bf}.medfast-bottom-detail{color:#af96a5}.medfast-bottom a:hover{text-decoration:underline;text-underline-offset:4px}
 .medfast-fold a:focus-visible,.medfast-fold button:focus-visible{outline:2px solid #c994b0;outline-offset:4px}
-@media(max-width:1000px){.medfast-fold{padding:28px}.medfast-layout{gap:26px}.medfast-copy h2{font-size:35px}.medfast-description{font-size:14px}.medfast-conversation{padding:18px;min-height:310px}.medfast-demo-head{padding:20px 18px}.medfast-choices{padding:17px 18px 0}.medfast-demo-head .medfast-brand{font-size:23px}.medfast-bottom-detail{display:none}}
-@media(max-width:700px){.medfast-fold{padding:24px 20px 18px;margin-top:48px}.medfast-head{margin-bottom:25px}.medfast-brand{font-size:29px}.medfast-eyebrow{max-width:110px;text-align:right;font-size:9px}.medfast-layout{grid-template-columns:1fr;gap:26px}.medfast-copy h2{font-size:clamp(31px,7.5vw,42px)}.medfast-description{font-size:15px;margin-top:15px}.medfast-features{gap:12px;margin:19px 0}.medfast-features strong{font-size:14px}.medfast-features div>span{font-size:12px}.medfast-demo-head{padding:18px}.medfast-conversation{min-height:285px}.medfast-question{margin-left:20px}.medfast-question p,.medfast-answer p{font-size:14px}.medfast-insight p{font-size:12px}.medfast-choices{gap:6px}.medfast-choices button{font-size:11px;padding:9px}.medfast-demo-foot{padding:12px 18px;font-size:10px}.medfast-bottom{align-items:flex-start;font-size:10px;gap:20px;margin-top:23px;padding-top:15px}.medfast-bottom>*{max-width:50%}.medfast-bottom a{text-align:right}}
-@media(prefers-reduced-motion:reduce){.medfast-cta{transition:none!important}}
+@media(max-width:1000px){.medfast-fold{padding:28px}.medfast-layout{gap:26px}.medfast-copy h2{font-size:35px}.medfast-description{font-size:14px}.medfast-log{padding:4px 18px 6px}.medfast-compose{padding:8px 14px 12px}.medfast-demo-head{padding:20px 18px}.medfast-choices{padding:17px 18px 0}.medfast-demo-head .medfast-brand{font-size:23px}.medfast-bottom-detail{display:none}}
+@media(max-width:700px){.medfast-fold{padding:24px 20px 18px;margin-top:48px}.medfast-head{margin-bottom:25px}.medfast-brand{font-size:29px}.medfast-eyebrow{max-width:110px;text-align:right;font-size:9px}.medfast-layout{grid-template-columns:1fr;gap:26px}.medfast-copy h2{font-size:clamp(31px,7.5vw,42px)}.medfast-description{font-size:15px;margin-top:15px}.medfast-features{gap:12px;margin:19px 0}.medfast-features strong{font-size:14px}.medfast-features div>span{font-size:12px}.medfast-demo-head{padding:18px}.medfast-demo{height:600px}.medfast-bubble,.medfast-reply p{font-size:14px}.medfast-choices{gap:6px}.medfast-choices button{font-size:11px;padding:9px}.medfast-demo-foot{padding:11px 16px;font-size:10px}.medfast-bottom{align-items:flex-start;font-size:10px;gap:20px;margin-top:23px;padding-top:15px}.medfast-bottom>*{max-width:50%}.medfast-bottom a{text-align:right}}
+@media(prefers-reduced-motion:reduce){.medfast-cta,.medfast-send,.medfast-chip{transition:none!important}.medfast-enter,.medfast-shine,.medfast-caret,.medfast-empty{animation:none!important}.medfast-demo{height:auto}.medfast-log{flex:none;-webkit-mask-image:none;mask-image:none}}
 /* On small screens the live example explains the uses, avoiding repeated copy. */
-@media(max-width:700px){.medfast-features{display:none}.medfast-copy .medfast-cta{margin-top:18px}.medfast-conversation{min-height:0;padding:15px}.medfast-demo-foot{display:none}.medfast-layout{gap:22px}.medfast-insight{margin-top:13px}.medfast-description{line-height:1.5}.medfast-demo-head{padding:16px}.medfast-choices{padding:14px 15px 0}}
+@media(max-width:700px){.medfast-features{display:none}.medfast-copy .medfast-cta{margin-top:18px}.medfast-demo{height:590px}.medfast-log{padding:4px 15px 6px}.medfast-compose{padding:6px 10px 10px}.medfast-draft{font-size:14px}.medfast-demo{margin-inline:-14px}.medfast-choices{gap:6px}.medfast-choices button{font-size:12px;padding:7px 13px}.medfast-bar{padding:10px 11px}.medfast-compose{padding:6px 8px 10px}.medfast-chip{padding:0 9px;font-size:12px}.medfast-layout{gap:22px}.medfast-description{line-height:1.5}.medfast-demo-head{padding:16px}.medfast-choices{padding:12px 15px 0}}
+@media(max-width:400px){.medfast-actions{gap:4px}.medfast-end{gap:4px}.medfast-chip{padding-inline:7px}}
+/* The bar always on one line: with little room the mic steps out, and on the narrowest phones the buttons tighten. */
+@container (max-width:292px){.medfast-mic{display:none}}
+@container (max-width:250px){.medfast-chip{padding-inline:6px;font-size:11.5px}.medfast-actions,.medfast-end{gap:3px}.medfast-round,.medfast-send{width:30px;height:30px}}
+/* A narrow card (a phone, or the two columns of a tablet): short names for the conversations and, as the real chat does on
+   the phone, no "Enter para enviar". */
+@container (max-width:440px){.medfast-long{display:none}.medfast-short{display:inline}.medfast-actions small{display:none}.medfast-choices{gap:6px}.medfast-choices button{font-size:12px;padding:7px 13px}}
